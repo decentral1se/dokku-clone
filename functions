@@ -39,7 +39,10 @@ cat | DOKKU_ROOT="$DOKKU_ROOT" dokku git-hook $APP
 EOF
     chmod +x "$PRERECEIVE_HOOK"
 
-    ps_rebuild "$APP"
+    # Note(decentral1se): disabled for now since we never want it to deploy
+    # when arranging applications with Ansible. I tried to configure this but
+    # Bash is really tricky as per usual
+    # ps_rebuild "$APP"
   fi
 }
 
